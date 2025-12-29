@@ -230,7 +230,7 @@ export default function App() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`${typography.heading} text-5xl md:text-8xl text-white mb-2 tracking-tighter`}
+            className={`${typography.heading} text-3xl sm:text-5xl md:text-8xl text-white mb-2 tracking-tighter`}
           >
             SIGNAL OVER NOISE
           </motion.h1>
@@ -238,7 +238,7 @@ export default function App() {
              initial={{ opacity: 0 }}
              animate={{ opacity: 0.6 }}
              transition={{ delay: 0.5 }}
-             className={`${typography.body} text-cyan-400 text-xs md:text-sm tracking-[0.4em] uppercase`}
+             className={`${typography.body} text-cyan-400 text-[10px] sm:text-xs md:text-sm tracking-[0.4em] uppercase`}
           >
             Statistical Journalism & Narrative Analysis
           </motion.p>
@@ -273,15 +273,15 @@ export default function App() {
       {/* --- MAIN CONTENT --- */}
       <motion.main 
         style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-[90] pt-[100vh] px-6"
+        className="relative z-[90] pt-[100vh] px-4 sm:px-6"
       >
         {/* Hero Section */}
-        <section className="max-w-7xl mx-auto py-32 text-center">
-          <h2 className={`${typography.heading} text-5xl md:text-8xl mb-8`}>
+        <section className="max-w-6xl mx-auto py-12 sm:py-20 md:py-32 text-center">
+          <h2 className={`${typography.heading} text-3xl sm:text-5xl md:text-9xl mb-6 sm:mb-8`}>
             DECONSTRUCTING<br />
             <span className="text-white/20">THE STATIC</span>
           </h2>
-          <p className={`${typography.body} text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-16 leading-relaxed`}>
+          <p className={`${typography.body} text-base sm:text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 leading-relaxed px-2`}>
             We map bias, quantify outrage, and reveal context in the modern narrative stream. A data-driven laboratory using open-source intelligence and statistical modeling.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -292,21 +292,21 @@ export default function App() {
                 boxShadow: "0px 0px 30px rgba(34, 211, 238, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-white text-black font-serif font-bold rounded-full hover:bg-cyan-400 transition-all duration-300 flex items-center gap-3 cursor-pointer group"
+              className="px-6 sm:px-10 py-4 sm:py-5 bg-white text-black font-serif font-bold rounded-full hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2 sm:gap-3 cursor-pointer group text-sm sm:text-base"
             >
               EXPLORE ANALYSES 
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Activity size={18} className="group-hover:text-black text-cyan-600 transition-colors" />
+                <Activity size={16} className="sm:size-[18px] group-hover:text-black text-cyan-600 transition-colors" />
               </motion.div>
             </motion.button>
           </div>
         </section>
 
         {/* Global Search Section with Modern Animation */}
-        <section className="max-w-5xl mx-auto py-24">
+        <section className="max-w-4xl sm:max-w-5xl mx-auto py-12 sm:py-24 px-2">
           <motion.div 
             onMouseEnter={() => setIsSearchHovered(true)}
             onMouseLeave={() => setIsSearchHovered(false)}
@@ -320,7 +320,7 @@ export default function App() {
               : 'from-white/5 to-transparent'
             }`}
           >
-            <div className={`relative flex items-center gap-6 rounded-[calc(1.5rem-4px)] p-6 md:p-8 transition-all duration-500 overflow-hidden ${
+            <div className={`relative flex items-center gap-4 sm:gap-6 rounded-[calc(1.5rem-4px)] p-4 sm:p-6 md:p-8 transition-all duration-500 overflow-hidden ${
               isSearchFocused ? 'bg-black' : 'bg-[#121214]'
             }`}>
               {/* Scanline Animation for Search */}
@@ -333,11 +333,11 @@ export default function App() {
                 />
               )}
               
-              <Search className={`transition-colors duration-300 ${isSearchFocused ? 'text-cyan-400' : 'text-slate-500'}`} size={28} />
+              <Search className={`flex-shrink-0 transition-colors duration-300 ${isSearchFocused ? 'text-cyan-400' : 'text-slate-500'}`} size={24} />
               <input 
                 type="text" 
                 placeholder="Topic, headline, or claim..."
-                className="bg-transparent border-none outline-none text-2xl md:text-4xl font-serif text-white w-full placeholder:text-white/10 focus:ring-0 relative z-10"
+                className="bg-transparent border-none outline-none text-lg sm:text-2xl md:text-4xl font-serif text-white w-full placeholder:text-white/10 focus:ring-0 relative z-10"
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -348,7 +348,7 @@ export default function App() {
                 <motion.div 
                   animate={{ opacity: [0.2, 0.5, 0.2] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="w-2 h-8 bg-cyan-500/50 rounded-full"
+                  className="w-2 h-8 bg-cyan-500/50 rounded-full flex-shrink-0"
                 />
               )}
             </div>
@@ -356,24 +356,24 @@ export default function App() {
         </section>
 
         {/* Open-Source Section */}
-        <section className="max-w-7xl mx-auto py-24 mb-32">
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <section className="max-w-6xl mx-auto py-12 sm:py-24 mb-16 sm:mb-32 px-4">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-24 items-center">
              <div>
                <span className={typography.mono}>The Open-Source Layer</span>
-               <h2 className={`${typography.heading} text-4xl md:text-6xl text-white mt-4 mb-8`}>OSINT & Evidence</h2>
-               <p className={`${typography.body} text-slate-400 mb-8 leading-relaxed`}>
+               <h2 className={`${typography.heading} text-2xl sm:text-4xl md:text-6xl text-white mt-4 mb-6 sm:mb-8`}>OSINT & Evidence</h2>
+               <p className={`${typography.body} text-sm sm:text-base text-slate-400 mb-6 sm:mb-8 leading-relaxed`}>
                  Our investigations are rooted in transparency. We leverage open-source datasets (OSINT), peer-reviewed academic studies, and public government records to build a factual foundation that survives the narrative churn.
                </p>
-               <div className="grid grid-cols-2 gap-6">
+               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                  <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-cyan-500/50 transition-colors">
-                   <Database className="text-cyan-400 mb-4" size={24} />
-                   <div className={`${typography.mono} text-[9px] text-white/40`}>Datasets</div>
-                   <div className="text-lg font-serif">1,200+ Cleaned</div>
+                   <Database className="text-cyan-400 mb-3 sm:mb-4" size={20} />
+                   <div className={`${typography.mono} text-[8px] sm:text-[9px] text-white/40`}>Datasets</div>
+                   <div className="text-base sm:text-lg font-serif">1,200+ Cleaned</div>
                  </div>
                  <div className="p-4 bg-white/5 border border-white/10 rounded-xl hover:border-cyan-500/50 transition-colors">
-                   <FileText className="text-cyan-400 mb-4" size={24} />
-                   <div className={`${typography.mono} text-[9px] text-white/40`}>Studies</div>
-                   <div className="text-lg font-serif">Peer-Reviewed</div>
+                   <FileText className="text-cyan-400 mb-3 sm:mb-4" size={20} />
+                   <div className={`${typography.mono} text-[8px] sm:text-[9px] text-white/40`}>Studies</div>
+                   <div className="text-base sm:text-lg font-serif">Peer-Reviewed</div>
                  </div>
                </div>
              </div>
@@ -383,48 +383,48 @@ export default function App() {
         </section>
 
         {/* Investigative Grid */}
-        <section className="max-w-7xl mx-auto py-24">
-          <div className="flex justify-between items-end mb-12">
+        <section className="max-w-6xl mx-auto py-12 sm:py-24 px-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 gap-4">
             <div>
               <span className={typography.mono}>ACTIVE INTELLIGENCE</span>
-              <h2 className={`${typography.heading} text-3xl md:text-5xl text-white mt-2`}>Recent Dissections</h2>
+              <h2 className={`${typography.heading} text-2xl sm:text-3xl md:text-5xl text-white mt-2`}>Recent Dissections</h2>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {INVESTIGATIONS.map(article => (
               <motion.div
                 key={article.id}
                 whileHover={{ y: -8, borderColor: "rgba(34,211,238,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className={`p-6 rounded-xl border ${colors.surface} ${colors.border} transition-all duration-300 relative group overflow-hidden cursor-pointer`}
+                className={`p-5 sm:p-6 rounded-xl border ${colors.surface} ${colors.border} transition-all duration-300 relative group overflow-hidden cursor-pointer flex flex-col`}
               >
                 <div className="absolute top-0 left-0 w-1 h-0 bg-cyan-400 group-hover:h-full transition-all duration-500" />
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2 mb-4 flex-wrap">
                   {article.tags.map(tag => (
-                    <span key={tag} className="text-[9px] px-2 py-0.5 rounded-full border border-white/5 text-white/40 uppercase font-mono">
+                    <span key={tag} className="text-[8px] px-2 py-0.5 rounded-full border border-white/5 text-white/40 uppercase font-mono">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className={`${typography.heading} text-xl text-white mb-2 group-hover:text-cyan-400 transition-colors`}>{article.title}</h3>
-                <p className={`${typography.body} text-sm text-slate-400 mb-6 leading-relaxed`}>{article.description}</p>
-                <div className="flex justify-between items-center mt-auto">
+                <h3 className={`${typography.heading} text-lg sm:text-xl text-white mb-2 group-hover:text-cyan-400 transition-colors`}>{article.title}</h3>
+                <p className={`${typography.body} text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed flex-grow`}>{article.description}</p>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-auto">
                   <div className="flex gap-4">
                     <div className="flex flex-col">
-                      <span className="text-[8px] text-amber-500/60 font-mono">EMOTION</span>
+                      <span className="text-[7px] sm:text-[8px] text-amber-500/60 font-mono">EMOTION</span>
                       <div className="w-10 h-1 bg-white/5 rounded-full overflow-hidden">
                         <div className="h-full bg-amber-500" style={{ width: `${article.stats.emotion * 10}%` }} />
                       </div>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[8px] text-cyan-400/60 font-mono">INTEGRITY</span>
+                      <span className="text-[7px] sm:text-[8px] text-cyan-400/60 font-mono">INTEGRITY</span>
                       <div className="w-10 h-1 bg-white/5 rounded-full overflow-hidden">
                         <div className="h-full bg-cyan-400" style={{ width: `${article.stats.factual * 10}%` }} />
                       </div>
                     </div>
                   </div>
-                  <ArrowRight size={16} className="text-white/20 group-hover:text-cyan-400 transition-colors" />
+                  <ArrowRight size={16} className="text-white/20 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
                 </div>
               </motion.div>
             ))}
@@ -432,11 +432,11 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-24 border-t border-white/5 bg-black/20">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-slate-500">
+        <footer className="py-12 sm:py-24 border-t border-white/5 bg-black/20 mt-8">
+          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 text-slate-500 text-sm">
             <div className="lg:col-span-2">
-              <h3 className={`${typography.heading} text-white text-2xl mb-6`}>Signal Over Noise</h3>
-              <p className="text-sm max-w-sm mb-8">Independent statistical journalism. Mapping the metrics of public discourse through OSINT and data transparency.</p>
+              <h3 className={`${typography.heading} text-white text-xl sm:text-2xl mb-4 sm:mb-6`}>Signal Over Noise</h3>
+              <p className="text-xs sm:text-sm max-w-sm mb-6 sm:mb-8 leading-relaxed">Independent statistical journalism. Mapping the metrics of public discourse through OSINT and data transparency.</p>
               <div className="flex gap-4">
                 <Twitter size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
                 <Github size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
@@ -444,17 +444,17 @@ export default function App() {
               </div>
             </div>
             <div>
-              <h4 className={`${typography.mono} text-white mb-6 text-[9px]`}>RESOURCES</h4>
-              <ul className="space-y-2 text-xs">
+              <h4 className={`${typography.mono} text-white mb-4 sm:mb-6 text-[8px] sm:text-[9px]`}>RESOURCES</h4>
+              <ul className="space-y-2 text-[11px] sm:text-xs">
                 <li className="hover:text-cyan-400 cursor-pointer transition-colors">Open Data Repository</li>
                 <li className="hover:text-cyan-400 cursor-pointer transition-colors">Methodology Whitepaper</li>
                 <li className="hover:text-cyan-400 cursor-pointer transition-colors">Privacy Policy</li>
               </ul>
             </div>
             <div>
-              <h4 className={`${typography.mono} text-white mb-6 text-[9px]`}>STATUS</h4>
-              <div className="flex items-center gap-2 text-[9px]">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+              <h4 className={`${typography.mono} text-white mb-4 sm:mb-6 text-[8px] sm:text-[9px]`}>STATUS</h4>
+              <div className="flex items-center gap-2 text-[11px] sm:text-[9px]">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)] flex-shrink-0" />
                 <span>ALL_SYSTEMS_OPERATIONAL</span>
               </div>
             </div>
