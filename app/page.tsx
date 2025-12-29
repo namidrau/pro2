@@ -65,7 +65,9 @@ const INVESTIGATIONS = [
 
 // --- SUB-COMPONENTS ---
 
-const WordFlash = ({ text, delay }) => (
+type WordFlashProps = { text: string; delay: number };
+
+const WordFlash: React.FC<WordFlashProps> = ({ text, delay }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
     animate={{ 
@@ -112,7 +114,7 @@ const Oscilloscope = () => (
 );
 
 const InteractiveGraph = () => {
-  const [hoveredPoint, setHoveredPoint] = useState(null);
+  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
   const data = [
     { x: 50, y: 150, label: "Official Report", value: "98.2%" },
     { x: 150, y: 120, label: "Social Echo", value: "14.5%" },
